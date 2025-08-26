@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ShopVerse.Services.CouponAPI.Data;
@@ -7,58 +8,65 @@ using ShopVerse.Services.CouponAPI.Models.DTOs;
 
 namespace ShopVerse.Services.CouponAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/coupon")]
     [ApiController]
+    [Authorize]
     public class CouponAPIController : ControllerBase
     {
         private readonly AppDbContext appDbContext;
+        private readonly ResponseDTO _responseDTO;
         private IMapper _mapper;
 
         public CouponAPIController(AppDbContext appDbContext, IMapper mapper)
         {
             this.appDbContext = appDbContext;
             _mapper = mapper;
+            _responseDTO = new ResponseDTO();
         }
 
         [HttpGet]
-        public IActionResult GetCoupons()
+        public ResponseDTO GetCoupons()
         {
-            var copupons = appDbContext.Coupons.ToList();
-            _mapper.Map<List<CouponDTO>>(copupons);
-            return Ok(copupons);
+            var copupons = appDbContext.Coupons.ToList();            
+            _responseDTO.Result = _mapper.Map<List<CouponDTO>>(copupons); 
+            return _responseDTO;
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetCouponById(int id)
+        public ResponseDTO GetCouponById(int id)
         {
             var coupon = appDbContext.Coupons.FirstOrDefault(c => c.Id == id);
-            _mapper.Map<CouponDTO>(coupon);
+            
             if (coupon == null)
             {
-                return NotFound();
+                _responseDTO.IsSuccess = false;
+
             }
-            return Ok(coupon);
+            _responseDTO.Result = _mapper.Map<CouponDTO>(coupon); 
+            return _responseDTO;
         }
 
         [HttpGet("GetCouponByCode/{code}")]
-        public IActionResult GetCouponByCode(string code)
+        public ResponseDTO GetCouponByCode(string code)
         {
-            var coupon = appDbContext.Coupons.FirstOrDefault(c => c.CouponCode == code);
-            _mapper.Map<CouponDTO>(coupon);
+            var coupon = appDbContext.Coupons.FirstOrDefault(c => c.CouponCode == code);            
             if (coupon == null)
             {
-                return NotFound();
+                _responseDTO.IsSuccess = false;
+
             }
-            return Ok(coupon);
+            _responseDTO.Result = _mapper.Map<CouponDTO>(coupon); 
+            return _responseDTO;
         }
 
         [HttpPost]
-        public IActionResult CreateCoupon([FromBody] CouponDTO couponDTO)
+        public ResponseDTO CreateCoupon([FromBody] CouponDTO couponDTO)
         {
             var coupon = _mapper.Map<Coupon>(couponDTO);
             appDbContext.Coupons.Add(coupon);
             appDbContext.SaveChanges();
-            return CreatedAtAction(nameof(GetCouponById), new { id = coupon.Id }, coupon);
+            _responseDTO.Result = _mapper.Map<CouponDTO>(coupon);
+            return _responseDTO;
         }
 
         [HttpPut]

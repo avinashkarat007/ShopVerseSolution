@@ -1,0 +1,6 @@
+@ShopVerse.Services.AuthAPI_HostAddress = http://localhost:5198
+
+GET {{ShopVerse.Services.AuthAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
