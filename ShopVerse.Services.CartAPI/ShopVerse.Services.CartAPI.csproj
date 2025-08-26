@@ -28,4 +28,8 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ShopVerse.MessageBus\ShopVerse.MessageBus.csproj" />
+  </ItemGroup>
+
 </Project>
