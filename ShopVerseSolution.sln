@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopVerse.Web", "ShopVerse.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopVerse.Services.AuthAPI", "ShopVerse.Services.AuthAPI\ShopVerse.Services.AuthAPI.csproj", "{FDA70677-7AA5-460F-B1A6-C69E24BC580B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopVerse.Services.ProductAPI", "ShopVerse.Services.ProductAPI\ShopVerse.Services.ProductAPI.csproj", "{D679A0F8-D81A-494D-B6F6-8820367362DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{FDA70677-7AA5-460F-B1A6-C69E24BC580B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDA70677-7AA5-460F-B1A6-C69E24BC580B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDA70677-7AA5-460F-B1A6-C69E24BC580B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D679A0F8-D81A-494D-B6F6-8820367362DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D679A0F8-D81A-494D-B6F6-8820367362DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D679A0F8-D81A-494D-B6F6-8820367362DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D679A0F8-D81A-494D-B6F6-8820367362DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +49,7 @@ Global
 		{0DE05E64-EB85-4326-A2CF-8C75C197A02A} = {3A4F2718-5F05-4374-9257-EC6A24742720}
 		{67A76E5E-C10A-49FE-A8BA-D35AF27EB847} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{FDA70677-7AA5-460F-B1A6-C69E24BC580B} = {3A4F2718-5F05-4374-9257-EC6A24742720}
+		{D679A0F8-D81A-494D-B6F6-8820367362DE} = {3A4F2718-5F05-4374-9257-EC6A24742720}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {68E5C60E-9549-4368-90CB-2E842695AEC3}
