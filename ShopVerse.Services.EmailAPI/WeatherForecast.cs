@@ -1,4 +1,4 @@
-namespace ShopVerse.MessageBus
+namespace ShopVerse.Services.EmailAPI
 {
     public class WeatherForecast
     {

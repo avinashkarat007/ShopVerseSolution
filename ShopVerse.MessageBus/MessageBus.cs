@@ -7,7 +7,7 @@ namespace ShopVerse.MessageBus
     public class MessageBus : IMessageBus
     {
 
-        private string connectionString = "Endpoint=sb://mangoweb.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=HjoslS58pPHtAULb0tay/jx4Ys0+MO5/R+ASbCcFTG0=";
+        private string connectionString = "Endpoint=sb://avinash-service-bus.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=RKwbQ+01MsCcoPY47Ik4JUfnQgRSlCOOP+ASbJHctsM=";
 
         public async Task PublishMessage(object message, string topic_queue_Name)
         {

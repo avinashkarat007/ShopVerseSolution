@@ -6,7 +6,6 @@ using ShopVerse.Web.Models;
 using ShopVerse.Web.Service.IService;
 using System.Diagnostics;
 
-
 namespace ShopVerse.Web.Controllers
 {
     public class HomeController : Controller
@@ -65,10 +64,10 @@ namespace ShopVerse.Web.Controllers
         {
             CartDto cartDto = new CartDto()
             {
-                //CartHeader = new CartHeaderDto
-                //{
-                //    UserId = User.Claims.Where(u => u.Type == JwtClaimTypes.Subject)?.FirstOrDefault()?.Value
-                //}
+                CartHeader = new CartHeaderDto
+                {
+                    UserId = "761ceddb-986b-492c-a0bb-755c07fa5fd8"
+                }
             };
 
             CartDetailsDto cartDetails = new CartDetailsDto()

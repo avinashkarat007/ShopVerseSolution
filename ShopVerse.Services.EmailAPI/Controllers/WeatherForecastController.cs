@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace ShopVerse.MessageBus.Controllers
+namespace ShopVerse.Services.EmailAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]

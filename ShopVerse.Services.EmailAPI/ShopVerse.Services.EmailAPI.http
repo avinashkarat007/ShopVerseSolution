@@ -1,0 +1,6 @@
+@ShopVerse.Services.EmailAPI_HostAddress = http://localhost:5001
+
+GET {{ShopVerse.Services.EmailAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
